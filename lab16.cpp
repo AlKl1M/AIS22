@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-// условие аналогичное предыдущему, однако реализуем прямой обход (с помощью стека). 
+// СѓСЃР»РѕРІРёРµ Р°РЅР°Р»РѕРіРёС‡РЅРѕРµ РїСЂРµРґС‹РґСѓС‰РµРјСѓ, РѕРґРЅР°РєРѕ СЂРµР°Р»РёР·СѓРµРј РїСЂСЏРјРѕР№ РѕР±С…РѕРґ (СЃ РїРѕРјРѕС‰СЊСЋ СЃС‚РµРєР°). 
 class Tree
 {
 public:
@@ -29,7 +29,7 @@ public:
 		string = str;
 	}
 
-	//добавление
+	//РґРѕР±Р°РІР»РµРЅРёРµ
 	void add(const int v)
 	{
 		if (v > value)
@@ -56,7 +56,7 @@ public:
 		}
 	}
 
-	// переводит число в строку
+	// РїРµСЂРµРІРѕРґРёС‚ С‡РёСЃР»Рѕ РІ СЃС‚СЂРѕРєСѓ
 	std::string toString(int value) 
 	{
 		std::string result;
@@ -74,7 +74,7 @@ public:
 		return result;
 	}
 
-	// преобразование дерева в линейно-скобочную для вывода
+	// РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РґРµСЂРµРІР° РІ Р»РёРЅРµР№РЅРѕ-СЃРєРѕР±РѕС‡РЅСѓСЋ РґР»СЏ РІС‹РІРѕРґР°
 	void print(Tree* tree) 
 	{
 		string += toString(tree->value);
@@ -101,13 +101,13 @@ public:
 		print(this);
 	}
 
-	// проверка на число
+	// РїСЂРѕРІРµСЂРєР° РЅР° С‡РёСЃР»Рѕ
 	bool isDigital(const char elem)
 	{
 		return (elem >= '0' && elem <= '9') ? true : false;
 	}
 
-	// Функция для прохода по строке и преобразования ее в бинарное дерево
+	// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїСЂРѕС…РѕРґР° РїРѕ СЃС‚СЂРѕРєРµ Рё РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ РµРµ РІ Р±РёРЅР°СЂРЅРѕРµ РґРµСЂРµРІРѕ
 	Tree parse(std::string str) 
 	{
 		Tree result;
@@ -150,7 +150,7 @@ public:
 	}
 };
 
-// прямой обход
+// РїСЂСЏРјРѕР№ РѕР±С…РѕРґ
 void direct(std::vector<int>& v, Tree* tree)
 {
 	std::stack <Tree*> s;
@@ -177,7 +177,7 @@ void direct(std::vector<int>& v, Tree* tree)
 	} while (true);
 }
 
-// обратный обход
+// РѕР±СЂР°С‚РЅС‹Р№ РѕР±С…РѕРґ
 void reverse(std::vector<int>& v, Tree* tree)
 {
 	std::stack <Tree*> s;
@@ -207,7 +207,7 @@ void reverse(std::vector<int>& v, Tree* tree)
 	}
 }
 
-// кольцевой
+// РєРѕР»СЊС†РµРІРѕР№
 void center(std::vector<int>& v, Tree* tree)
 {
 	std::stack <Tree*> s;
